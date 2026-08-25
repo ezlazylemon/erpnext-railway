@@ -27,6 +27,14 @@ COPY --from=builder --chown=$systemUser /home/$systemUser/$benchFolderName /home
 COPY temp_nginx.conf /home/$systemUser/temp_nginx.conf
 COPY temp_supervisor.conf /home/$systemUser/temp_supervisor.conf
 
+# --- Custom Russian translations (APORT) --------------------------------------
+# Заменяем машинный русский перевод на вычитанный. Файлы читаются приложениями
+# из apps/<app>/translations/ru.csv; COPY стоит до `bench build`, чтобы сборка
+# ассетов подхватила их. Правки перевода = коммит в translations/*.csv.
+# ВАЖНО: записи доктайпа Translation в БАЗЕ имеют приоритет над этими файлами.
+COPY --chown=$systemUser translations/erpnext-ru.csv /home/$systemUser/$benchFolderName/apps/erpnext/erpnext/translations/ru.csv
+COPY --chown=$systemUser translations/frappe-ru.csv /home/$systemUser/$benchFolderName/apps/frappe/frappe/translations/ru.csv
+
 USER root
 WORKDIR /home/$systemUser/$benchFolderName
 
