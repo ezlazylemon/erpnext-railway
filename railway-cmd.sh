@@ -66,6 +66,18 @@ echo "-> Running bench migrate"
 su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' migrate" \
     || echo "WARN: migrate failed — check logs"
 
+# --- Flush stale shared asset map (redis survives image swaps) ---------------
+# После смены образа/версии redis может отдавать карту бандлов прошлой
+# сборки (shared-ключ assets_json не чистится clear-cache) — деск виснет
+# на сплэше с 404 по бандлам.
+su frappe -c "cd /home/frappe/bench && env/bin/python -c \"
+import os, frappe
+os.chdir('/home/frappe/bench')
+frappe.init(site='${RFP_DOMAIN_NAME}', sites_path='sites')
+frappe.connect()
+frappe.cache.delete_value('assets_json', shared=True)
+\"" || echo "WARN: assets_json flush failed"
+
 # --- Clear cache (best-effort) -----------------------------------------------
 echo "-> Clearing cache"
 su frappe -c "cd /home/frappe/bench && bench execute frappe.cache_manager.clear_global_cache" || true
