@@ -33309,7 +33309,7 @@ msgstr "{0} обязательно"
 
 #: frappe/public/js/frappe/form/save.js:196
 msgid "{0} is required."
-msgstr "{0} С‚СЂРµР±СѓРµС‚СЃСЏ."
+msgstr "{0} требуется."
 
 #: frappe/public/js/frappe/form/controls/link.js:724
 #: frappe/public/js/frappe/views/reports/report_view.js:1591
@@ -33832,8 +33832,8 @@ msgid "+ Add a Filter"
 msgstr "+ Добавить фильтр"
 
 #. added from v15 reviewed set
-msgid "1 Currency = [?] Fraction\\nFor e.g. 1 USD = 100 Cent"
-msgstr "1 единица валюты = [?] дробных единиц\\nНапример: 1 USD = 100 центов"
+msgid "1 Currency = [?] Fraction\\\nFor e.g. 1 USD = 100 Cent"
+msgstr "1 единица валюты = [?] дробных единиц\\\nНапример: 1 USD = 100 центов"
 
 #. added from v15 reviewed set
 msgid "1 comment"
@@ -33844,12 +33844,12 @@ msgid "; not allowed in condition"
 msgstr "; не допускается в условии"
 
 #. added from v15 reviewed set
-msgid "<h4>Default Template</h4>\\n<p>Uses <a href=\"http://jinja.pocoo.org/docs/templates/\">Jinja Templating</a> and all the fields of Address (including Custom Fields if any) will be available</p>\\n<pre><code>{{ address_line1 }}&lt;br&gt;\\n{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}\\n{{ city }}&lt;br&gt;\\n{% if state %}{{ state }}&lt;br&gt;{% endif -%}\\n{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}\\n{{ country }}&lt;br&gt;\\n{% if phone %}Phone: {{ phone }}&lt;br&gt;{% endif -%}\\n{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}\\n{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}\\n</code></pre>"
-msgstr "<h4>Шаблон по умолчанию</h4>\\n<p>Используется <a href=\"http://jinja.pocoo.org/docs/templates/\">шаблонизатор Jinja</a>; доступны все поля адреса (включая настраиваемые поля, если они есть)</p>\\n<pre><code>{{ address_line1 }}&lt;br&gt;\\n{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}\\n{{ city }}&lt;br&gt;\\n{% if state %}{{ state }}&lt;br&gt;{% endif -%}\\n{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}\\n{{ country }}&lt;br&gt;\\n{% if phone %}Телефон: {{ phone }}&lt;br&gt;{% endif -%}\\n{% if fax %}Факс: {{ fax }}&lt;br&gt;{% endif -%}\\n{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}\\n</code></pre>"
+msgid "<h4>Default Template</h4>\\\n<p>Uses <a href=\"http://jinja.pocoo.org/docs/templates/\">Jinja Templating</a> and all the fields of Address (including Custom Fields if any) will be available</p>\\\n<pre><code>{{ address_line1 }}&lt;br&gt;\\\n{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}\\\n{{ city }}&lt;br&gt;\\\n{% if state %}{{ state }}&lt;br&gt;{% endif -%}\\\n{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}\\\n{{ country }}&lt;br&gt;\\\n{% if phone %}Phone: {{ phone }}&lt;br&gt;{% endif -%}\\\n{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}\\\n{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}\\\n</code></pre>"
+msgstr "<h4>Шаблон по умолчанию</h4>\\\n<p>Используется <a href=\"http://jinja.pocoo.org/docs/templates/\">шаблонизатор Jinja</a>; доступны все поля адреса (включая настраиваемые поля, если они есть)</p>\\\n<pre><code>{{ address_line1 }}&lt;br&gt;\\\n{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}\\\n{{ city }}&lt;br&gt;\\\n{% if state %}{{ state }}&lt;br&gt;{% endif -%}\\\n{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}\\\n{{ country }}&lt;br&gt;\\\n{% if phone %}Телефон: {{ phone }}&lt;br&gt;{% endif -%}\\\n{% if fax %}Факс: {{ fax }}&lt;br&gt;{% endif -%}\\\n{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}\\\n</code></pre>"
 
 #. added from v15 reviewed set
-msgid "<p>Set context before rendering a template. Example:</p><p>\\n</p><div><pre><code>\\ncontext.project = frappe.get_doc(\"Project\", frappe.form_dict.name)\\n</code></pre></div>"
-msgstr "<p>Установите контекст перед рендерингом шаблона. Пример:</p><p>\\n</p><div><pre><code>\\ncontext.project = frappe.get_doc(\"Project\", frappe.form_dict.name)\\n</code></pre></div>"
+msgid "<p>Set context before rendering a template. Example:</p><p>\\\n</p><div><pre><code>\\\ncontext.project = frappe.get_doc(\"Project\", frappe.form_dict.name)\\\n</code></pre></div>"
+msgstr "<p>Установите контекст перед рендерингом шаблона. Пример:</p><p>\\\n</p><div><pre><code>\\\ncontext.project = frappe.get_doc(\"Project\", frappe.form_dict.name)\\\n</code></pre></div>"
 
 #. added from v15 reviewed set
 msgid "A Lead with this Email Address should exist"
@@ -35436,8 +35436,8 @@ msgid "For Document Event"
 msgstr "Для события документа"
 
 #. added from v15 reviewed set
-msgid "For Links, enter the DocType as range.\\nFor Select, enter list of Options, each on a new line."
-msgstr "Для Link укажите DocType в качестве диапазона.\\nДля Select укажите список вариантов, каждый с новой строки."
+msgid "For Links, enter the DocType as range.\\\nFor Select, enter list of Options, each on a new line."
+msgstr "Для Link укажите DocType в качестве диапазона.\\\nДля Select укажите список вариантов, каждый с новой строки."
 
 #. added from v15 reviewed set
 msgid "For currency {0}, the minimum transaction amount should be {1}"
@@ -35740,8 +35740,8 @@ msgid "If enabled, the password strength will be enforced based on the Minimum P
 msgstr "Если включено, будет проверяться сложность пароля по значению минимальной оценки. Значение 2 — средняя сложность, 4 — очень сложный."
 
 #. added from v15 reviewed set
-msgid "If the condition is satisfied user will be rewarded with the points. eg. doc.status == 'Closed'\\n"
-msgstr "Если условие выполнено, пользователь будет вознаграждён баллами. Например: doc.status == 'Closed'\\n"
+msgid "If the condition is satisfied user will be rewarded with the points. eg. doc.status == 'Closed'\\\n"
+msgstr "Если условие выполнено, пользователь будет вознаграждён баллами. Например: doc.status == 'Closed'\\\n"
 
 #. added from v15 reviewed set
 msgid "If the document has different field names on the Producer and Consumer's end check this and set up the Mapping"
@@ -36224,8 +36224,8 @@ msgid "Maximum Points"
 msgstr "Максимум баллов"
 
 #. added from v15 reviewed set
-msgid "Maximum points allowed after multiplying points with the multiplier value\\n(Note: For no limit leave this field empty or set 0)"
-msgstr "Максимальное количество баллов после умножения на множитель\\n(Примечание: для снятия ограничения оставьте поле пустым или укажите 0)"
+msgid "Maximum points allowed after multiplying points with the multiplier value\\\n(Note: For no limit leave this field empty or set 0)"
+msgstr "Максимальное количество баллов после умножения на множитель\\\n(Примечание: для снятия ограничения оставьте поле пустым или укажите 0)"
 
 #. added from v15 reviewed set
 msgid "Meaning of Submit, Cancel, Amend"
@@ -36332,8 +36332,8 @@ msgid "Name not set via prompt"
 msgstr "Имя не задано через запрос"
 
 #. added from v15 reviewed set
-msgid "Naming Options:\\n<ol><li><b>field:[fieldname]</b> - By Field</li><li><b>naming_series:</b> - By Naming Series (field called naming_series must be present</li><li><b>Prompt</b> - Prompt user for a name</li><li><b>[series]</b> - Series by prefix (separated by a dot); for example PRE.#####</li>\\n<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Replace all braced words (fieldnames, date words (DD, MM, YY), series) with their value. Outside braces, any characters can be used.</li></ol>"
-msgstr "Варианты именования:\\n<ol><li><b>field:[fieldname]</b> - по полю</li><li><b>naming_series:</b> - по серии нумерации (должно присутствовать поле naming_series</li><li><b>Prompt</b> - запрашивать имя у пользователя</li><li><b>[series]</b> - серия по префиксу (отделяется точкой); например PRE.#####</li>\\n<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - все слова в фигурных скобках (имена полей, элементы даты (DD, MM, YY), серии) заменяются их значениями. Вне фигурных скобок можно использовать любые символы.</li></ol>"
+msgid "Naming Options:\\\n<ol><li><b>field:[fieldname]</b> - By Field</li><li><b>naming_series:</b> - By Naming Series (field called naming_series must be present</li><li><b>Prompt</b> - Prompt user for a name</li><li><b>[series]</b> - Series by prefix (separated by a dot); for example PRE.#####</li>\\\n<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Replace all braced words (fieldnames, date words (DD, MM, YY), series) with their value. Outside braces, any characters can be used.</li></ol>"
+msgstr "Варианты именования:\\\n<ol><li><b>field:[fieldname]</b> - по полю</li><li><b>naming_series:</b> - по серии нумерации (должно присутствовать поле naming_series</li><li><b>Prompt</b> - запрашивать имя у пользователя</li><li><b>[series]</b> - серия по префиксу (отделяется точкой); например PRE.#####</li>\\\n<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - все слова в фигурных скобках (имена полей, элементы даты (DD, MM, YY), серии) заменяются их значениями. Вне фигурных скобок можно использовать любые символы.</li></ol>"
 
 #. added from v15 reviewed set
 msgid "Navigate Home"
@@ -36632,8 +36632,8 @@ msgid "Page Missing or Moved"
 msgstr "Страница отсутствует или перемещена"
 
 #. added from v15 reviewed set
-msgid "Page to show on the website\\n"
-msgstr "Страница для показа на сайте\\n"
+msgid "Page to show on the website\\\n"
+msgstr "Страница для показа на сайте\\\n"
 
 #. added from v15 reviewed set
 msgid "Pages in Desk (place holders)"
@@ -37856,8 +37856,8 @@ msgid "This email was sent to {0} and copied to {1}"
 msgstr "Это письмо было отправлено на адрес {0}, копия — на {1}"
 
 #. added from v15 reviewed set
-msgid "This field will appear only if the fieldname defined here has value OR the rules are true (examples):\\nmyfield\\neval:doc.myfield=='My Value'\\neval:doc.age&gt;18"
-msgstr "Это поле появится, только если указанное здесь имя поля имеет значение ИЛИ правила истинны (примеры):\\nmyfield\\neval:doc.myfield=='My Value'\\neval:doc.age&gt;18"
+msgid "This field will appear only if the fieldname defined here has value OR the rules are true (examples):\\\nmyfield\\\neval:doc.myfield=='My Value'\\\neval:doc.age&gt;18"
+msgstr "Это поле появится, только если указанное здесь имя поля имеет значение ИЛИ правила истинны (примеры):\\\nmyfield\\\neval:doc.myfield=='My Value'\\\neval:doc.age&gt;18"
 
 #. added from v15 reviewed set
 msgid "This form does not have any input"
@@ -37888,12 +37888,12 @@ msgid "To User"
 msgstr "Пользователю"
 
 #. added from v15 reviewed set
-msgid "To add dynamic subject, use jinja tags like\\n\\n<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
-msgstr "Чтобы сделать тему динамической, используйте теги jinja, например\\n\\n<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
+msgid "To add dynamic subject, use jinja tags like\\\n\\\n<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
+msgstr "Чтобы сделать тему динамической, используйте теги jinja, например\\\n\\\n<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
 
 #. added from v15 reviewed set
-msgid "To add dynamic subject, use jinja tags like\\n\\n<div><pre><code>{{ doc.name }} Delivered</code></pre></div>"
-msgstr "Чтобы сделать тему динамической, используйте теги jinja, например\\n\\n<div><pre><code>{{ doc.name }} Delivered</code></pre></div>"
+msgid "To add dynamic subject, use jinja tags like\\\n\\\n<div><pre><code>{{ doc.name }} Delivered</code></pre></div>"
+msgstr "Чтобы сделать тему динамической, используйте теги jinja, например\\\n\\\n<div><pre><code>{{ doc.name }} Delivered</code></pre></div>"
 
 #. added from v15 reviewed set
 msgid "To get the updated report, click on {0}."
@@ -37960,8 +37960,8 @@ msgid "Total number of emails to sync in initial sync process "
 msgstr "Общее количество писем для начальной синхронизации "
 
 #. added from v15 reviewed set
-msgid "Track if your email has been opened by the recipient.\\n<br>\\nNote: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered \"Opened\""
-msgstr "Отслеживайте, было ли ваше письмо открыто получателем.\\n<br>\\nПримечание: если вы отправляете нескольким получателям, письмо будет считаться «Открытым», даже если его прочитал только один получатель"
+msgid "Track if your email has been opened by the recipient.\\\n<br>\\\nNote: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered \"Opened\""
+msgstr "Отслеживайте, было ли ваше письмо открыто получателем.\\\n<br>\\\nПримечание: если вы отправляете нескольким получателям, письмо будет считаться «Открытым», даже если его прочитал только один получатель"
 
 #. added from v15 reviewed set
 msgid "Tracks milestones on the lifecycle of a document if it undergoes multiple stages."
@@ -38020,8 +38020,8 @@ msgid "UPPER CASE"
 msgstr "ВЕРХНИЙ РЕГИСТР"
 
 #. added from v15 reviewed set
-msgid "URIs for receiving authorization code once the user allows access, as well as failure responses. Typically a REST endpoint exposed by the Client App.\\n<br>e.g. http://hostname//api/method/frappe.www.login.login_via_facebook"
-msgstr "URI для получения кода авторизации после того, как пользователь разрешит доступ, а также для ответов об ошибке. Обычно это REST-эндпоинт клиентского приложения.\\n<br>Например: http://hostname//api/method/frappe.www.login.login_via_facebook"
+msgid "URIs for receiving authorization code once the user allows access, as well as failure responses. Typically a REST endpoint exposed by the Client App.\\\n<br>e.g. http://hostname//api/method/frappe.www.login.login_via_facebook"
+msgstr "URI для получения кода авторизации после того, как пользователь разрешит доступ, а также для ответов об ошибке. Обычно это REST-эндпоинт клиентского приложения.\\\n<br>Например: http://hostname//api/method/frappe.www.login.login_via_facebook"
 
 #. added from v15 reviewed set
 msgid "URL must start with 'http://' or 'https://'"

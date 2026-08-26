@@ -18543,7 +18543,7 @@ msgstr "Письмо отправлено на {0}"
 #: erpnext/accounts/letterhead/company_letterhead.html:96
 #: erpnext/accounts/letterhead/company_letterhead_grey.html:114
 msgid "Email:"
-msgstr "Р­Р». Р°РґСЂРµСЃ:"
+msgstr "Эл. адрес:"
 
 #: erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js:20
 msgid "Emails Queued"
@@ -21430,7 +21430,7 @@ msgstr "«С даты» не может быть больше «По дату»"
 
 #: erpnext/selling/report/sales_partner_commission_summary/sales_partner_commission_summary.py:60
 msgid "From Date cannot be greater than To Date."
-msgstr "РЎ РґР°С‚С‹ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ, С‡РµРј Рє РґР°С‚Рµ."
+msgstr "С даты не может быть больше, чем к дате."
 
 #: erpnext/crm/report/sales_pipeline_analytics/sales_pipeline_analytics.py:27
 msgid "From Date is mandatory"
@@ -46625,7 +46625,7 @@ msgstr "Строка № {}: исходный счёт {} для счёта во
 
 #: erpnext/accounts/doctype/pos_invoice/pos_invoice.py:497
 msgid "Row #{}: You cannot add positive quantities in a return invoice. Please remove item {} to complete the return."
-msgstr "РЎС‚СЂРѕРєР° #{}: Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РґРѕР±Р°РІР»СЏС‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рµ РєРѕР»РёС‡РµСЃС‚РІР° РІ СЃС‡РµС‚-С„Р°РєС‚СѓСЂСѓ РІРѕР·РІСЂР°С‚Р°. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, СѓРґР°Р»РёС‚Рµ СЌР»РµРјРµРЅС‚ {}, С‡С‚РѕР±С‹ Р·Р°РІРµСЂС€РёС‚СЊ РІРѕР·РІСЂР°С‚."
+msgstr "Строка #{}: Вы не можете добавлять положительные количества в счет-фактуру возврата. Пожалуйста, удалите элемент {}, чтобы завершить возврат."
 
 #: erpnext/stock/doctype/pick_list/pick_list.py:239
 msgid "Row #{}: item {} has been picked already."
@@ -51753,7 +51753,7 @@ msgstr "Создана складская операция {0}"
 
 #: erpnext/manufacturing/doctype/job_card/job_card.py:1614
 msgid "Stock Entry {0} has created"
-msgstr "Р—Р°РїРёСЃСЊ РїРѕ Р·Р°РїР°СЃР°Рј {0} Р±С‹Р»Р° СЃРѕР·РґР°РЅР°"
+msgstr "Запись по запасам {0} была создана"
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:1335
 msgid "Stock Entry {0} is not submitted"
@@ -55597,7 +55597,7 @@ msgstr ""
 
 #: erpnext/stock/doctype/item/item.js:1296
 msgid "There are two options to maintain valuation of stock. FIFO (first in - first out) and Moving Average. To understand this topic in detail please visit <a href='https://docs.frappe.io/erpnext/user/manual/en/calculation-of-valuation-rate-in-fifo-and-moving-average' target='_blank'>Item Valuation, FIFO and Moving Average.</a>"
-msgstr "РЎСѓС‰РµСЃС‚РІСѓРµС‚ РґРІР° РІР°СЂРёР°РЅС‚Р° РІРµРґРµРЅРёСЏ РѕС†РµРЅРєРё Р·Р°РїР°СЃРѕРІ. FIFO (РїРµСЂРІС‹Рј РїСЂРёС€РµР» - РїРµСЂРІС‹Рј СѓС€РµР») Рё СЃРєРѕР»СЊР·СЏС‰Р°СЏ СЃСЂРµРґРЅСЏСЏ. Р§С‚РѕР±С‹ РїРѕРґСЂРѕР±РЅРѕ СЂР°Р·РѕР±СЂР°С‚СЊСЃСЏ РІ СЌС‚РѕР№ С‚РµРјРµ, РїРѕСЃРµС‚РёС‚Рµ <a href='https://docs.frappe.io/erpnext/user/manual/en/calculation-of-valuation-rate-in-fifo-and-moving-average' target='_blank'>РћС†РµРЅРєР° С‚РѕРІР°СЂР°, FIFO Рё СЃРєРѕР»СЊР·СЏС‰Р°СЏ СЃСЂРµРґРЅСЏСЏ.</a>"
+msgstr "Существует два варианта ведения оценки запасов. FIFO (первым пришел - первым ушел) и скользящая средняя. Чтобы подробно разобраться в этой теме, посетите <a href='https://docs.frappe.io/erpnext/user/manual/en/calculation-of-valuation-rate-in-fifo-and-moving-average' target='_blank'>Оценка товара, FIFO и скользящая средняя.</a>"
 
 #: banking/src/components/features/BankReconciliation/MatchAndReconcile.tsx:982
 msgid "There are {0} unreconciled transactions before {1}."
@@ -63377,8 +63377,8 @@ msgid "<b>From Date</b> is a mandatory filter."
 msgstr "<b>С даты</b> — обязательный фильтр."
 
 #. added from v15 reviewed set
-msgid "<b>Single</b>: Results which require only a single input.\\n<br>\\n<b>Compound</b>: Results which require multiple event inputs.\\n<br>\\n<b>Descriptive</b>: Tests which have multiple result components with manual result entry.\\n<br>\\n<b>Grouped</b>: Test templates which are a group of other test templates.\\n<br>\\n<b>No Result</b>: Tests with no results, can be ordered and billed but no Lab Test will be created. e.g.. Sub Tests for Grouped results"
-msgstr "<b>Одиночный</b>: результаты, требующие только одного значения.\\n<br>\\n<b>Составной</b>: результаты, требующие нескольких значений.\\n<br>\\n<b>Описательный</b>: анализы с несколькими компонентами результата и ручным вводом.\\n<br>\\n<b>Сгруппированный</b>: шаблоны анализов, объединяющие другие шаблоны.\\n<br>\\n<b>Без результата</b>: анализы без результата — их можно заказать и выставить счёт, но лабораторный анализ создан не будет. Например, подтесты для сгруппированных результатов"
+msgid "<b>Single</b>: Results which require only a single input.\\\n<br>\\\n<b>Compound</b>: Results which require multiple event inputs.\\\n<br>\\\n<b>Descriptive</b>: Tests which have multiple result components with manual result entry.\\\n<br>\\\n<b>Grouped</b>: Test templates which are a group of other test templates.\\\n<br>\\\n<b>No Result</b>: Tests with no results, can be ordered and billed but no Lab Test will be created. e.g.. Sub Tests for Grouped results"
+msgstr "<b>Одиночный</b>: результаты, требующие только одного значения.\\\n<br>\\\n<b>Составной</b>: результаты, требующие нескольких значений.\\\n<br>\\\n<b>Описательный</b>: анализы с несколькими компонентами результата и ручным вводом.\\\n<br>\\\n<b>Сгруппированный</b>: шаблоны анализов, объединяющие другие шаблоны.\\\n<br>\\\n<b>Без результата</b>: анализы без результата — их можно заказать и выставить счёт, но лабораторный анализ создан не будет. Например, подтесты для сгруппированных результатов"
 
 #. added from v15 reviewed set
 msgid "<b>To Date</b> is a mandatory filter."
@@ -64381,8 +64381,8 @@ msgid "Aggregate Field is required to create a number card"
 msgstr "Для создания числовой карточки необходимо указать поле агрегации"
 
 #. added from v15 reviewed set
-msgid "Aggregate group of **Items** into another **Item**. This is useful if you are bundling a certain **Items** into a package and you maintain stock of the packed **Items** and not the aggregate **Item**. \\n\\nThe package **Item** will have \"Is Stock Item\" as \"No\" and \"Is Sales Item\" as \"Yes\".\\n\\nFor Example: If you are selling Laptops and Backpacks separately and have a special price if the customer buys both, then the Laptop + Backpack will be a new Product Bundle Item.\\n\\nNote: BOM = Bill of Materials"
-msgstr "Объединяет группу **товаров** в другой **товар**. Это удобно, когда вы комплектуете определённые **товары** в набор и ведёте учёт запасов упакованных **товаров**, а не набора целиком. \\n\\nУ товара-набора «Складской товар» будет «Нет», а «Продаваемый товар» — «Да».\\n\\nНапример: если вы продаёте ноутбуки и рюкзаки по отдельности, но при покупке вместе действует специальная цена, то «Ноутбук + рюкзак» будет новым товарным набором.\\n\\nПримечание: BOM — спецификация"
+msgid "Aggregate group of **Items** into another **Item**. This is useful if you are bundling a certain **Items** into a package and you maintain stock of the packed **Items** and not the aggregate **Item**. \\\n\\\nThe package **Item** will have \"Is Stock Item\" as \"No\" and \"Is Sales Item\" as \"Yes\".\\\n\\\nFor Example: If you are selling Laptops and Backpacks separately and have a special price if the customer buys both, then the Laptop + Backpack will be a new Product Bundle Item.\\\n\\\nNote: BOM = Bill of Materials"
+msgstr "Объединяет группу **товаров** в другой **товар**. Это удобно, когда вы комплектуете определённые **товары** в набор и ведёте учёт запасов упакованных **товаров**, а не набора целиком. \\\n\\\nУ товара-набора «Складской товар» будет «Нет», а «Продаваемый товар» — «Да».\\\n\\\nНапример: если вы продаёте ноутбуки и рюкзаки по отдельности, но при покупке вместе действует специальная цена, то «Ноутбук + рюкзак» будет новым товарным набором.\\\n\\\nПримечание: BOM — спецификация"
 
 #. added from v15 reviewed set
 msgid "Agreement Details"
@@ -66997,8 +66997,8 @@ msgid "Check this to enable a scheduled Daily synchronization routine via schedu
 msgstr "Отметьте, чтобы включить ежедневную синхронизацию по расписанию"
 
 #. added from v15 reviewed set
-msgid "Check this to mark the student as present in case the student is not attending the institute to participate or represent the institute in any event.\\n\\n"
-msgstr "Отметьте, чтобы считать студента присутствующим, если он не в учебном заведении, но участвует в мероприятии или представляет заведение.\\n\\n"
+msgid "Check this to mark the student as present in case the student is not attending the institute to participate or represent the institute in any event.\\\n\\\n"
+msgstr "Отметьте, чтобы считать студента присутствующим, если он не в учебном заведении, но участвует в мероприятии или представляет заведение.\\\n\\\n"
 
 #. added from v15 reviewed set
 msgid "Check to display the full numeric value (e.g., 1,234,567 instead of 1.2M)."
@@ -70693,8 +70693,8 @@ msgid "Examiner Name"
 msgstr "ФИО экзаменатора"
 
 #. added from v15 reviewed set
-msgid "Example: ABCD.#####\\nIf series is set and Serial No is not mentioned in transactions, then automatic serial number will be created based on this series. If you always want to explicitly mention Serial Nos for this item. leave this blank."
-msgstr "Пример: ABCD.#####\\nЕсли серия задана, а серийный номер не указан в документах, он будет создан автоматически по этой серии. Если вы хотите всегда указывать серийные номера для этого товара вручную, оставьте поле пустым."
+msgid "Example: ABCD.#####\\\nIf series is set and Serial No is not mentioned in transactions, then automatic serial number will be created based on this series. If you always want to explicitly mention Serial Nos for this item. leave this blank."
+msgstr "Пример: ABCD.#####\\\nЕсли серия задана, а серийный номер не указан в документах, он будет создан автоматически по этой серии. Если вы хотите всегда указывать серийные номера для этого товара вручную, оставьте поле пустым."
 
 #. added from v15 reviewed set
 msgid "Example: ABCD.#####|||If series is set and Serial No is not mentioned in transactions, then automatic serial number will be created based on this series. If you always want to explicitly mention Serial Nos for this item. leave this blank."
@@ -72829,8 +72829,8 @@ msgid "If checked, a customer will be created for every Patient. Patient Invoice
 msgstr "Если отмечено, для каждого пациента будет создан клиент. Счета пациенту будут выставляться на этого клиента. Также при создании пациента можно выбрать существующего клиента. По умолчанию флажок установлен."
 
 #. added from v15 reviewed set
-msgid "If checked, a customer will be created, mapped to Patient.\\nPatient Invoices will be created against this Customer. You can also select existing Customer while creating Patient."
-msgstr "Если отмечено, будет создан клиент, привязанный к пациенту.\\nСчета пациенту будут выставляться на этого клиента. Также при создании пациента можно выбрать существующего клиента."
+msgid "If checked, a customer will be created, mapped to Patient.\\\nPatient Invoices will be created against this Customer. You can also select existing Customer while creating Patient."
+msgstr "Если отмечено, будет создан клиент, привязанный к пациенту.\\\nСчета пациенту будут выставляться на этого клиента. Также при создании пациента можно выбрать существующего клиента."
 
 #. added from v15 reviewed set
 msgid "If checked, negative numeric values of Currency, Quantity or Count would be shown as positive"
@@ -74477,8 +74477,8 @@ msgid "Leave application {0} already exists against the student {1}"
 msgstr "Заявление на отпуск {0} для студента {1} уже существует"
 
 #. added from v15 reviewed set
-msgid "Leave blank for home.\\nThis is relative to site URL, for example \"about\" will redirect to \"https://yoursitename.com/about\""
-msgstr "Оставьте пустым для главной страницы.\\nПуть указывается относительно адреса сайта: например, «about» перенаправит на «https://yoursitename.com/about»"
+msgid "Leave blank for home.\\\nThis is relative to site URL, for example \"about\" will redirect to \"https://yoursitename.com/about\""
+msgstr "Оставьте пустым для главной страницы.\\\nПуть указывается относительно адреса сайта: например, «about» перенаправит на «https://yoursitename.com/about»"
 
 #. added from v15 reviewed set
 msgid "Leave blank for home.|||This is relative to site URL, for example \"about\" will redirect to \"https://yoursitename.com/about\""
@@ -80061,8 +80061,8 @@ msgid "Replace BOM and update latest price in all BOMs"
 msgstr "Заменить спецификацию и обновить актуальную цену во всех спецификациях"
 
 #. added from v15 reviewed set
-msgid "Replace a particular BOM in all other BOMs where it is used. It will replace the old BOM link, update cost and regenerate \"BOM Explosion Item\" table as per new BOM.\\nIt also updates latest price in all the BOMs."
-msgstr "Заменяет конкретную спецификацию во всех других спецификациях, где она используется. Старая ссылка на спецификацию будет заменена, стоимость обновлена, а таблица развёрнутой спецификации пересоздана по новой спецификации.\\nТакже обновляет актуальные цены во всех спецификациях."
+msgid "Replace a particular BOM in all other BOMs where it is used. It will replace the old BOM link, update cost and regenerate \"BOM Explosion Item\" table as per new BOM.\\\nIt also updates latest price in all the BOMs."
+msgstr "Заменяет конкретную спецификацию во всех других спецификациях, где она используется. Старая ссылка на спецификацию будет заменена, стоимость обновлена, а таблица развёрнутой спецификации пересоздана по новой спецификации.\\\nТакже обновляет актуальные цены во всех спецификациях."
 
 #. added from v15 reviewed set
 msgid "Replace a particular BOM in all other BOMs where it is used. It will replace the old BOM link, update cost and regenerate \"BOM Explosion Item\" table as per new BOM.|||It also updates latest price in all the BOMs."
@@ -81297,8 +81297,8 @@ msgid "Score out of 100"
 msgstr "Балл из 100"
 
 #. added from v15 reviewed set
-msgid "Scorecard variables can be used, as well as:\\n{total_score} (the total score from that period),\\n{period_number} (the number of periods to present day)\\n"
-msgstr "Можно использовать переменные оценочной карты, а также:\\n{total_score} (общий балл за период),\\n{period_number} (число периодов до текущего дня)\\n"
+msgid "Scorecard variables can be used, as well as:\\\n{total_score} (the total score from that period),\\\n{period_number} (the number of periods to present day)\\\n"
+msgstr "Можно использовать переменные оценочной карты, а также:\\\n{total_score} (общий балл за период),\\\n{period_number} (число периодов до текущего дня)\\\n"
 
 #. added from v15 reviewed set
 msgid "Scorecard variables can be used, as well as:|||{total_score} (the total score from that period),|||{period_number} (the number of periods to present day)|||"
@@ -82881,8 +82881,8 @@ msgid "Standard Selling Rate should be greater than zero."
 msgstr "Стандартная цена продажи должна быть больше нуля."
 
 #. added from v15 reviewed set
-msgid "Standard Terms and Conditions that can be added to Sales and Purchases.\\n\\nExamples:\\n\\n1. Validity of the offer.\\n1. Payment Terms (In Advance, On Credit, part advance etc).\\n1. What is extra (or payable by the Customer).\\n1. Safety / usage warning.\\n1. Warranty if any.\\n1. Returns Policy.\\n1. Terms of shipping, if applicable.\\n1. Ways of addressing disputes, indemnity, liability, etc.\\n1. Address and Contact of your Company."
-msgstr "Типовые условия и положения, которые можно добавлять к продажам и закупкам.\\n\\nПримеры:\\n\\n1. Срок действия предложения.\\n1. Условия оплаты (предоплата, отсрочка, частичная предоплата и т. д.).\\n1. Что оплачивается дополнительно (или оплачивается клиентом).\\n1. Предупреждения по безопасности и эксплуатации.\\n1. Гарантия, если есть.\\n1. Условия возврата.\\n1. Условия отгрузки, если применимо.\\n1. Порядок разрешения споров, возмещения, ответственности и т. д.\\n1. Адрес и контакты вашей компании."
+msgid "Standard Terms and Conditions that can be added to Sales and Purchases.\\\n\\\nExamples:\\\n\\\n1. Validity of the offer.\\\n1. Payment Terms (In Advance, On Credit, part advance etc).\\\n1. What is extra (or payable by the Customer).\\\n1. Safety / usage warning.\\\n1. Warranty if any.\\\n1. Returns Policy.\\\n1. Terms of shipping, if applicable.\\\n1. Ways of addressing disputes, indemnity, liability, etc.\\\n1. Address and Contact of your Company."
+msgstr "Типовые условия и положения, которые можно добавлять к продажам и закупкам.\\\n\\\nПримеры:\\\n\\\n1. Срок действия предложения.\\\n1. Условия оплаты (предоплата, отсрочка, частичная предоплата и т. д.).\\\n1. Что оплачивается дополнительно (или оплачивается клиентом).\\\n1. Предупреждения по безопасности и эксплуатации.\\\n1. Гарантия, если есть.\\\n1. Условия возврата.\\\n1. Условия отгрузки, если применимо.\\\n1. Порядок разрешения споров, возмещения, ответственности и т. д.\\\n1. Адрес и контакты вашей компании."
 
 #. added from v15 reviewed set
 msgid "Standard Web Forms can not be modified, duplicate the Web Form instead."
@@ -82893,12 +82893,12 @@ msgid "Standard contract terms for Sales or Purchase."
 msgstr "Типовые условия договора для продажи или закупки."
 
 #. added from v15 reviewed set
-msgid "Standard tax template that can be applied to all Purchase Transactions. This template can contain list of tax heads and also other expense heads like \"Shipping\", \"Insurance\", \"Handling\" etc.\\n\\n#### Note\\n\\nThe tax rate you define here will be the standard tax rate for all **Items**. If there are **Items** that have different rates, they must be added in the **Item Tax** table in the **Item** master.\\n\\n#### Description of Columns\\n\\n1. Calculation Type: \\n    - This can be on **Net Total** (that is the sum of basic amount).\\n    - **On Previous Row Total / Amount** (for cumulative taxes or charges). If you select this option, the tax will be applied as a percentage of the previous row (in the tax table) amount or total.\\n    - **Actual** (as mentioned).\\n2. Account Head: The Account ledger under which this tax will be booked\\n3. Cost Center: If the tax / charge is an income (like shipping) or expense it needs to be booked against a Cost Center.\\n4. Description: Description of the tax (that will be printed in invoices / quotes).\\n5. Rate: Tax rate.\\n6. Amount: Tax amount.\\n7. Total: Cumulative total to this point.\\n8. Enter Row: If based on \"Previous Row Total\" you can select the row number which will be taken as a base for this calculation (default is the previous row).\\n9. Consider Tax or Charge for: In this section you can specify if the tax / charge is only for valuation (not a part of total) or only for total (does not add value to the item) or for both.\\n10. Add or Deduct: Whether you want to add or deduct the tax."
-msgstr "Стандартный шаблон налогов, который можно применять ко всем операциям закупки. Шаблон может содержать список налоговых счетов, а также счетов прочих расходов: «Доставка», «Страхование», «Обработка» и т. д.\\n\\n#### Примечание\\n\\nЗаданная здесь ставка налога будет стандартной ставкой для всех **товаров**. Если у отдельных **товаров** ставки другие, их нужно добавить в таблицу **Налоги товара** в карточке **товара**.\\n\\n#### Описание столбцов\\n\\n1. Тип расчёта: \\n    - Может быть от **итога нетто** (то есть от суммы позиций).\\n    - **От итога / суммы предыдущей строки** (для накопительных налогов и сборов). При выборе этого варианта налог считается как процент от суммы или итога предыдущей строки (в таблице налогов).\\n    - **Фактический** (указывается вручную).\\n2. Счёт учёта: счёт, на который будет отнесён этот налог\\n3. Центр затрат: если налог или сбор является доходом (например, доставка) либо расходом, его нужно отнести на центр затрат.\\n4. Описание: описание налога (будет напечатано в счетах и предложениях).\\n5. Ставка: ставка налога.\\n6. Сумма: сумма налога.\\n7. Итого: накопительный итог до этой строки.\\n8. Строка: если расчёт идёт «от итога предыдущей строки», можно выбрать номер строки, которая берётся за базу расчёта (по умолчанию — предыдущая строка).\\n9. Учитывать налог или сбор для: здесь указывается, участвует ли налог или сбор только в оценке (не входит в итог), только в итоге (не увеличивает стоимость позиции) или и там, и там.\\n10. Добавить или вычесть: добавлять налог или вычитать его."
+msgid "Standard tax template that can be applied to all Purchase Transactions. This template can contain list of tax heads and also other expense heads like \"Shipping\", \"Insurance\", \"Handling\" etc.\\\n\\\n#### Note\\\n\\\nThe tax rate you define here will be the standard tax rate for all **Items**. If there are **Items** that have different rates, they must be added in the **Item Tax** table in the **Item** master.\\\n\\\n#### Description of Columns\\\n\\\n1. Calculation Type: \\\n    - This can be on **Net Total** (that is the sum of basic amount).\\\n    - **On Previous Row Total / Amount** (for cumulative taxes or charges). If you select this option, the tax will be applied as a percentage of the previous row (in the tax table) amount or total.\\\n    - **Actual** (as mentioned).\\\n2. Account Head: The Account ledger under which this tax will be booked\\\n3. Cost Center: If the tax / charge is an income (like shipping) or expense it needs to be booked against a Cost Center.\\\n4. Description: Description of the tax (that will be printed in invoices / quotes).\\\n5. Rate: Tax rate.\\\n6. Amount: Tax amount.\\\n7. Total: Cumulative total to this point.\\\n8. Enter Row: If based on \"Previous Row Total\" you can select the row number which will be taken as a base for this calculation (default is the previous row).\\\n9. Consider Tax or Charge for: In this section you can specify if the tax / charge is only for valuation (not a part of total) or only for total (does not add value to the item) or for both.\\\n10. Add or Deduct: Whether you want to add or deduct the tax."
+msgstr "Стандартный шаблон налогов, который можно применять ко всем операциям закупки. Шаблон может содержать список налоговых счетов, а также счетов прочих расходов: «Доставка», «Страхование», «Обработка» и т. д.\\\n\\\n#### Примечание\\\n\\\nЗаданная здесь ставка налога будет стандартной ставкой для всех **товаров**. Если у отдельных **товаров** ставки другие, их нужно добавить в таблицу **Налоги товара** в карточке **товара**.\\\n\\\n#### Описание столбцов\\\n\\\n1. Тип расчёта: \\\n    - Может быть от **итога нетто** (то есть от суммы позиций).\\\n    - **От итога / суммы предыдущей строки** (для накопительных налогов и сборов). При выборе этого варианта налог считается как процент от суммы или итога предыдущей строки (в таблице налогов).\\\n    - **Фактический** (указывается вручную).\\\n2. Счёт учёта: счёт, на который будет отнесён этот налог\\\n3. Центр затрат: если налог или сбор является доходом (например, доставка) либо расходом, его нужно отнести на центр затрат.\\\n4. Описание: описание налога (будет напечатано в счетах и предложениях).\\\n5. Ставка: ставка налога.\\\n6. Сумма: сумма налога.\\\n7. Итого: накопительный итог до этой строки.\\\n8. Строка: если расчёт идёт «от итога предыдущей строки», можно выбрать номер строки, которая берётся за базу расчёта (по умолчанию — предыдущая строка).\\\n9. Учитывать налог или сбор для: здесь указывается, участвует ли налог или сбор только в оценке (не входит в итог), только в итоге (не увеличивает стоимость позиции) или и там, и там.\\\n10. Добавить или вычесть: добавлять налог или вычитать его."
 
 #. added from v15 reviewed set
-msgid "Standard tax template that can be applied to all Sales Transactions. This template can contain list of tax heads and also other expense / income heads like \"Shipping\", \"Insurance\", \"Handling\" etc.\\n\\n#### Note\\n\\nThe tax rate you define here will be the standard tax rate for all **Items**. If there are **Items** that have different rates, they must be added in the **Item Tax** table in the **Item** master.\\n\\n#### Description of Columns\\n\\n1. Calculation Type: \\n    - This can be on **Net Total** (that is the sum of basic amount).\\n    - **On Previous Row Total / Amount** (for cumulative taxes or charges). If you select this option, the tax will be applied as a percentage of the previous row (in the tax table) amount or total.\\n    - **Actual** (as mentioned).\\n2. Account Head: The Account ledger under which this tax will be booked\\n3. Cost Center: If the tax / charge is an income (like shipping) or expense it needs to be booked against a Cost Center.\\n4. Description: Description of the tax (that will be printed in invoices / quotes).\\n5. Rate: Tax rate.\\n6. Amount: Tax amount.\\n7. Total: Cumulative total to this point.\\n8. Enter Row: If based on \"Previous Row Total\" you can select the row number which will be taken as a base for this calculation (default is the previous row).\\n9. Is this Tax included in Basic Rate?: If you check this, it means that this tax will not be shown below the item table, but will be included in the Basic Rate in your main item table. This is useful where you want give a flat price (inclusive of all taxes) price to customers."
-msgstr "Стандартный шаблон налогов, который можно применять ко всем операциям продажи. Шаблон может содержать список налоговых счетов, а также счетов прочих расходов и доходов: «Доставка», «Страхование», «Обработка» и т. д.\\n\\n#### Примечание\\n\\nЗаданная здесь ставка налога будет стандартной ставкой для всех **товаров**. Если у отдельных **товаров** ставки другие, их нужно добавить в таблицу **Налоги товара** в карточке **товара**.\\n\\n#### Описание столбцов\\n\\n1. Тип расчёта: \\n    - Может быть от **итога нетто** (то есть от суммы позиций).\\n    - **От итога / суммы предыдущей строки** (для накопительных налогов и сборов). При выборе этого варианта налог считается как процент от суммы или итога предыдущей строки (в таблице налогов).\\n    - **Фактический** (указывается вручную).\\n2. Счёт учёта: счёт, на который будет отнесён этот налог\\n3. Центр затрат: если налог или сбор является доходом (например, доставка) либо расходом, его нужно отнести на центр затрат.\\n4. Описание: описание налога (будет напечатано в счетах и предложениях).\\n5. Ставка: ставка налога.\\n6. Сумма: сумма налога.\\n7. Итого: накопительный итог до этой строки.\\n8. Строка: если расчёт идёт «от итога предыдущей строки», можно выбрать номер строки, которая берётся за базу расчёта (по умолчанию — предыдущая строка).\\n9. Этот налог включён в базовую цену?: если отметить, налог не будет показан под таблицей позиций, а войдёт в базовую цену в основной таблице позиций. Это удобно, когда клиенту нужно показывать единую цену с учётом всех налогов."
+msgid "Standard tax template that can be applied to all Sales Transactions. This template can contain list of tax heads and also other expense / income heads like \"Shipping\", \"Insurance\", \"Handling\" etc.\\\n\\\n#### Note\\\n\\\nThe tax rate you define here will be the standard tax rate for all **Items**. If there are **Items** that have different rates, they must be added in the **Item Tax** table in the **Item** master.\\\n\\\n#### Description of Columns\\\n\\\n1. Calculation Type: \\\n    - This can be on **Net Total** (that is the sum of basic amount).\\\n    - **On Previous Row Total / Amount** (for cumulative taxes or charges). If you select this option, the tax will be applied as a percentage of the previous row (in the tax table) amount or total.\\\n    - **Actual** (as mentioned).\\\n2. Account Head: The Account ledger under which this tax will be booked\\\n3. Cost Center: If the tax / charge is an income (like shipping) or expense it needs to be booked against a Cost Center.\\\n4. Description: Description of the tax (that will be printed in invoices / quotes).\\\n5. Rate: Tax rate.\\\n6. Amount: Tax amount.\\\n7. Total: Cumulative total to this point.\\\n8. Enter Row: If based on \"Previous Row Total\" you can select the row number which will be taken as a base for this calculation (default is the previous row).\\\n9. Is this Tax included in Basic Rate?: If you check this, it means that this tax will not be shown below the item table, but will be included in the Basic Rate in your main item table. This is useful where you want give a flat price (inclusive of all taxes) price to customers."
+msgstr "Стандартный шаблон налогов, который можно применять ко всем операциям продажи. Шаблон может содержать список налоговых счетов, а также счетов прочих расходов и доходов: «Доставка», «Страхование», «Обработка» и т. д.\\\n\\\n#### Примечание\\\n\\\nЗаданная здесь ставка налога будет стандартной ставкой для всех **товаров**. Если у отдельных **товаров** ставки другие, их нужно добавить в таблицу **Налоги товара** в карточке **товара**.\\\n\\\n#### Описание столбцов\\\n\\\n1. Тип расчёта: \\\n    - Может быть от **итога нетто** (то есть от суммы позиций).\\\n    - **От итога / суммы предыдущей строки** (для накопительных налогов и сборов). При выборе этого варианта налог считается как процент от суммы или итога предыдущей строки (в таблице налогов).\\\n    - **Фактический** (указывается вручную).\\\n2. Счёт учёта: счёт, на который будет отнесён этот налог\\\n3. Центр затрат: если налог или сбор является доходом (например, доставка) либо расходом, его нужно отнести на центр затрат.\\\n4. Описание: описание налога (будет напечатано в счетах и предложениях).\\\n5. Ставка: ставка налога.\\\n6. Сумма: сумма налога.\\\n7. Итого: накопительный итог до этой строки.\\\n8. Строка: если расчёт идёт «от итога предыдущей строки», можно выбрать номер строки, которая берётся за базу расчёта (по умолчанию — предыдущая строка).\\\n9. Этот налог включён в базовую цену?: если отметить, налог не будет показан под таблицей позиций, а войдёт в базовую цену в основной таблице позиций. Это удобно, когда клиенту нужно показывать единую цену с учётом всех налогов."
 
 #. added from v15 reviewed set
 msgid "Standard user type {0} can not be deleted."
@@ -83961,8 +83961,8 @@ msgid "Tax Withholding rates to be applied on transactions."
 msgstr "Ставки удержания налога, применяемые к операциям."
 
 #. added from v15 reviewed set
-msgid "Tax detail table fetched from item master as a string and stored in this field.\\nUsed for Taxes and Charges"
-msgstr "Таблица налогов, загруженная из карточки товара в виде строки и сохранённая в этом поле.\\nИспользуется для налогов и сборов"
+msgid "Tax detail table fetched from item master as a string and stored in this field.\\\nUsed for Taxes and Charges"
+msgstr "Таблица налогов, загруженная из карточки товара в виде строки и сохранённая в этом поле.\\\nИспользуется для налогов и сборов"
 
 #. added from v15 reviewed set
 msgid "Tax detail table fetched from item master as a string and stored in this field.|||Used for Taxes and Charges"
@@ -86533,8 +86533,8 @@ msgid "Weight (In Kilogram)"
 msgstr "Вес (в килограммах)"
 
 #. added from v15 reviewed set
-msgid "Weight is mentioned,\\nPlease mention \"Weight UOM\" too"
-msgstr "Указан вес,\\nукажите также «Единицу измерения веса»"
+msgid "Weight is mentioned,\\\nPlease mention \"Weight UOM\" too"
+msgstr "Указан вес,\\\nукажите также «Единицу измерения веса»"
 
 #. added from v15 reviewed set
 msgid "Weightage"
@@ -87361,8 +87361,8 @@ msgid "canceled"
 msgstr "отменён"
 
 #. added from v15 reviewed set
-msgid "chapters/chapter_name\\nleave blank automatically set after saving chapter."
-msgstr "chapters/chapter_name\\nоставьте пустым — заполнится автоматически после сохранения отделения."
+msgid "chapters/chapter_name\\\nleave blank automatically set after saving chapter."
+msgstr "chapters/chapter_name\\\nоставьте пустым — заполнится автоматически после сохранения отделения."
 
 #. added from v15 reviewed set
 msgid "commented"
@@ -87465,8 +87465,8 @@ msgid "in Minutes"
 msgstr "в минутах"
 
 #. added from v15 reviewed set
-msgid "in Minutes\\nUpdated via 'Time Log'"
-msgstr "в минутах\\nОбновляется через «Журнал времени»"
+msgid "in Minutes\\\nUpdated via 'Time Log'"
+msgstr "в минутах\\\nОбновляется через «Журнал времени»"
 
 #. added from v15 reviewed set
 msgid "invoice"
