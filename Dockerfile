@@ -17,7 +17,8 @@ RUN echo "-> Start builder" \
     && . "$NVM_DIR/nvm.sh" \
     && nvm install 22 \
     && nvm alias default 22 \
-    && node -v \
+    && npm install -g yarn \
+    && node -v && yarn -v \
     && echo "-> Get additional apps (baked into image)" \
     # ветки под frappe v15: hrms=version-15, insights=version-3,
     # crm/helpdesk живут на main (совместимы с v15 на момент фиксации)
@@ -66,7 +67,7 @@ RUN echo "-> Install nginx, supervisor, mariadb-client, gettext-base, netcat" \
     && echo "-> Remove nginx default site" \
     && rm /etc/nginx/sites-enabled/default \
     && echo "-> Rebuild bench (compile assets, Node 22)" \
-    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 22; nvm alias default 22; node -v; bench build' \
+    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 22; nvm alias default 22; npm install -g yarn; node -v; yarn -v; bench build' \
     && echo "-> Snapshot built sites for first-boot assets/apps links" \
     && su $systemUser -c "cp -r /home/$systemUser/$benchFolderName/sites /home/$systemUser/$benchFolderName/built_sites"
 
