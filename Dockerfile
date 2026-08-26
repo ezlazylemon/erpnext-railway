@@ -70,6 +70,10 @@ RUN echo "-> Install nginx, supervisor, mariadb-client, gettext-base, netcat" \
     && rm /etc/nginx/sites-enabled/default \
     && echo "-> Rebuild bench (compile assets, Node 24)" \
     && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 24; nvm alias default 24; npm install -g yarn; node -v; yarn -v; bench build' \
+    && echo "-> APORT CSS tweaks (report row-number column width)" \
+    && for f in /home/$systemUser/$benchFolderName/sites/assets/frappe/dist/css/desk.bundle.*.css; do \
+         echo '/* APORT */ .dt-cell--col-0, .dt-cell--col-0 .dt-cell__content { min-width: 52px; }' >> "$f"; \
+       done \
     && echo "-> Snapshot built sites for first-boot assets/apps links" \
     && su $systemUser -c "cp -r /home/$systemUser/$benchFolderName/sites /home/$systemUser/$benchFolderName/built_sites"
 
