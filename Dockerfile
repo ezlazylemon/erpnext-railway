@@ -10,10 +10,11 @@ WORKDIR /home/$systemUser/$benchFolderName
 # --- Пин последних патчей v15 (база pipech отстаёт) ---------------------------
 # ВАЖНО: IPv6-хотфикс ниже правит файл frappe — пин должен идти ДО него,
 # иначе checkout -f откатит правку.
+# у pipech-образа remote origin вырезан — тянем теги напрямую по URL
 RUN echo "-> Pin frappe v15.119.0 / erpnext v15.120.0" \
-    && git -C apps/frappe fetch --depth 1 origin tag v15.119.0 \
+    && git -C apps/frappe fetch --depth 1 https://github.com/frappe/frappe.git tag v15.119.0 \
     && git -C apps/frappe checkout -f v15.119.0 \
-    && git -C apps/erpnext fetch --depth 1 origin tag v15.120.0 \
+    && git -C apps/erpnext fetch --depth 1 https://github.com/frappe/erpnext.git tag v15.120.0 \
     && git -C apps/erpnext checkout -f v15.120.0 \
     && env/bin/pip install --no-cache-dir -e apps/frappe -e apps/erpnext \
     && (cd apps/frappe && yarn install) \
