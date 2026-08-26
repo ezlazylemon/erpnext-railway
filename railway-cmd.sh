@@ -59,6 +59,13 @@ else
     su frappe -c "cd /home/frappe/bench && bench use '${RFP_DOMAIN_NAME}'" || true
 fi
 
+# --- Run migrations (required after image/version upgrades) ------------------
+# ВАЖНО: migrate строго ДО install-app — установка приложений на
+# немигрированную схему падает и оставляет огрызки Module Def.
+echo "-> Running bench migrate"
+su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' migrate" \
+    || echo "WARN: migrate failed — check logs"
+
 # --- Install additional apps (idempotent) -----------------------------------
 EXTRA_APPS="hrms insights crm"
 INSTALLED=$(su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' list-apps" 2>/dev/null || true)
@@ -69,11 +76,6 @@ for app in $EXTRA_APPS; do
             || echo "WARN: install-app $app failed (site keeps running)"
     fi
 done
-
-# --- Run migrations (required after image/version upgrades) ------------------
-echo "-> Running bench migrate"
-su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' migrate" \
-    || echo "WARN: migrate failed — check logs"
 
 # --- Clear cache (best-effort) -----------------------------------------------
 echo "-> Clearing cache"
