@@ -25,11 +25,6 @@ RUN echo "-> Start builder" \
     && bench get-app --branch version-16 --skip-assets hrms https://github.com/frappe/hrms \
     && bench get-app --branch version-3 --skip-assets insights https://github.com/frappe/insights \
     && bench get-app --skip-assets crm https://github.com/frappe/crm \
-    && bench get-app --skip-assets helpdesk https://github.com/frappe/helpdesk \
-    # у helpdesk фронтенд живёт в desk/ со своим package.json —
-    # get-app ставит зависимости только в корне, доставляем сами
-    && cd /home/$systemUser/$benchFolderName/apps/helpdesk/desk && yarn install \
-    && cd /home/$systemUser/$benchFolderName \
     && echo "-> Builder done"
 
 # ------------------------------------------

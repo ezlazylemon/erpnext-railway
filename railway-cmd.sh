@@ -60,7 +60,7 @@ else
 fi
 
 # --- Install additional apps (idempotent) -----------------------------------
-EXTRA_APPS="hrms insights crm helpdesk"
+EXTRA_APPS="hrms insights crm"
 INSTALLED=$(su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' list-apps" 2>/dev/null || true)
 for app in $EXTRA_APPS; do
     if ! echo "$INSTALLED" | grep -qw "$app"; then
