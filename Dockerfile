@@ -2,7 +2,7 @@
 # Stage 01 — builder
 # Source: pipech/erpnext-docker-debian (Railway pattern)
 # ------------------------------------------
-FROM pipech/erpnext-docker-debian:version-15-latest AS builder
+FROM pipech/erpnext-docker-debian:version-16-latest AS builder
 
 USER $systemUser
 WORKDIR /home/$systemUser/$benchFolderName
@@ -12,16 +12,16 @@ RUN echo "-> Start builder" \
     # IPv6 hotfix — Railway private networking is IPv6-only
     # https://docs.railway.com/guides/private-networking#caveats
     && sed -i 's/socket\.AF_INET, socket\.SOCK_STREAM/socket.AF_INET6, socket.SOCK_STREAM/g' /home/frappe/bench/apps/frappe/frappe/utils/connections.py \
-    && echo "-> Upgrade Node to 20 (CRM/Helpdesk frontends require >=20)" \
+    && echo "-> Upgrade Node to 22 (v16 era; CRM/Helpdesk need >=20)" \
     && export NVM_DIR="${NVM_DIR:-$HOME/.nvm}" \
     && . "$NVM_DIR/nvm.sh" \
-    && nvm install 20 \
-    && nvm alias default 20 \
+    && nvm install 22 \
+    && nvm alias default 22 \
     && node -v \
     && echo "-> Get additional apps (baked into image)" \
     # ветки под frappe v15: hrms=version-15, insights=version-3,
     # crm/helpdesk живут на main (совместимы с v15 на момент фиксации)
-    && bench get-app --branch version-15 --skip-assets hrms https://github.com/frappe/hrms \
+    && bench get-app --branch version-16 --skip-assets hrms https://github.com/frappe/hrms \
     && bench get-app --branch version-3 --skip-assets insights https://github.com/frappe/insights \
     && bench get-app --skip-assets crm https://github.com/frappe/crm \
     && bench get-app --skip-assets helpdesk https://github.com/frappe/helpdesk \
@@ -30,7 +30,7 @@ RUN echo "-> Start builder" \
 # ------------------------------------------
 # Stage 02 — production runtime
 # ------------------------------------------
-FROM frappe/bench:v5.22.9
+FROM frappe/bench:v5.31.0
 
 ENV systemUser=frappe
 ENV benchFolderName=bench
@@ -41,12 +41,12 @@ COPY temp_nginx.conf /home/$systemUser/temp_nginx.conf
 COPY temp_supervisor.conf /home/$systemUser/temp_supervisor.conf
 
 # --- Custom Russian translations (APORT) --------------------------------------
-# Заменяем машинный русский перевод на вычитанный. Файлы читаются приложениями
-# из apps/<app>/translations/ru.csv; COPY стоит до `bench build`, чтобы сборка
-# ассетов подхватила их. Правки перевода = коммит в translations/*.csv.
-# ВАЖНО: записи доктайпа Translation в БАЗЕ имеют приоритет над этими файлами.
-COPY --chown=$systemUser translations/erpnext-ru.csv /home/$systemUser/$benchFolderName/apps/erpnext/erpnext/translations/ru.csv
-COPY --chown=$systemUser translations/frappe-ru.csv /home/$systemUser/$benchFolderName/apps/frappe/frappe/translations/ru.csv
+# v16 читает переводы ТОЛЬКО из locale/<lang>.po (CSV больше не читается).
+# Наши .po = поставочный словарь v16 + вычитанные переводы поверх.
+# Правки перевода = коммит в translations/*-ru.po.
+# ВАЖНО: записи доктайпа Translation в БАЗЕ имеют приоритет над файлами.
+COPY --chown=$systemUser translations/erpnext-ru.po /home/$systemUser/$benchFolderName/apps/erpnext/erpnext/locale/ru.po
+COPY --chown=$systemUser translations/frappe-ru.po /home/$systemUser/$benchFolderName/apps/frappe/frappe/locale/ru.po
 
 USER root
 WORKDIR /home/$systemUser/$benchFolderName
@@ -65,8 +65,8 @@ RUN echo "-> Install nginx, supervisor, mariadb-client, gettext-base, netcat" \
     && rm -rf /var/lib/apt/lists/* \
     && echo "-> Remove nginx default site" \
     && rm /etc/nginx/sites-enabled/default \
-    && echo "-> Rebuild bench (compile assets, Node 20)" \
-    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 20; nvm alias default 20; node -v; bench build' \
+    && echo "-> Rebuild bench (compile assets, Node 22)" \
+    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 22; nvm alias default 22; node -v; bench build' \
     && echo "-> Snapshot built sites for first-boot assets/apps links" \
     && su $systemUser -c "cp -r /home/$systemUser/$benchFolderName/sites /home/$systemUser/$benchFolderName/built_sites"
 

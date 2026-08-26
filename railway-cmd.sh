@@ -70,6 +70,11 @@ for app in $EXTRA_APPS; do
     fi
 done
 
+# --- Run migrations (required after image/version upgrades) ------------------
+echo "-> Running bench migrate"
+su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' migrate" \
+    || echo "WARN: migrate failed — check logs"
+
 # --- Clear cache (best-effort) -----------------------------------------------
 echo "-> Clearing cache"
 su frappe -c "cd /home/frappe/bench && bench execute frappe.cache_manager.clear_global_cache" || true
