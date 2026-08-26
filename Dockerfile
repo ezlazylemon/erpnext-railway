@@ -2,7 +2,7 @@
 # Stage 01 — builder
 # Source: pipech/erpnext-docker-debian (Railway pattern)
 # ------------------------------------------
-FROM pipech/erpnext-docker-debian:version-16-latest AS builder
+FROM pipech/erpnext-docker-debian:version-15-latest AS builder
 
 USER $systemUser
 WORKDIR /home/$systemUser/$benchFolderName
@@ -12,19 +12,12 @@ RUN echo "-> Start builder" \
     # IPv6 hotfix — Railway private networking is IPv6-only
     # https://docs.railway.com/guides/private-networking#caveats
     && sed -i 's/socket\.AF_INET, socket\.SOCK_STREAM/socket.AF_INET6, socket.SOCK_STREAM/g' /home/frappe/bench/apps/frappe/frappe/utils/connections.py \
-    && echo "-> Upgrade Node to 24 (frappe v16.26 requires >=24)" \
-    && export NVM_DIR="${NVM_DIR:-$HOME/.nvm}" \
-    && . "$NVM_DIR/nvm.sh" \
-    && nvm install 24 \
-    && nvm alias default 24 \
-    && npm install -g yarn \
-    && node -v && yarn -v \
     && echo "-> Builder done"
 
 # ------------------------------------------
 # Stage 02 — production runtime
 # ------------------------------------------
-FROM frappe/bench:v5.31.0
+FROM frappe/bench:v5.22.9
 
 ENV systemUser=frappe
 ENV benchFolderName=bench
@@ -38,12 +31,11 @@ COPY temp_nginx.conf /home/$systemUser/temp_nginx.conf
 COPY temp_supervisor.conf /home/$systemUser/temp_supervisor.conf
 
 # --- Custom Russian translations (APORT) --------------------------------------
-# v16 читает переводы ТОЛЬКО из locale/<lang>.po (CSV больше не читается).
-# Наши .po = поставочный словарь v16 + вычитанные переводы поверх.
-# Правки перевода = коммит в translations/*-ru.po.
+# v15 читает переводы из apps/<app>/translations/ru.csv.
+# Наши CSV = сток + вычитанные строки (13.7k erpnext, 4.7k frappe).
 # ВАЖНО: записи доктайпа Translation в БАЗЕ имеют приоритет над файлами.
-COPY --chown=$systemUser translations/erpnext-ru.po /home/$systemUser/$benchFolderName/apps/erpnext/erpnext/locale/ru.po
-COPY --chown=$systemUser translations/frappe-ru.po /home/$systemUser/$benchFolderName/apps/frappe/frappe/locale/ru.po
+COPY --chown=$systemUser translations/erpnext-ru.csv /home/$systemUser/$benchFolderName/apps/erpnext/erpnext/translations/ru.csv
+COPY --chown=$systemUser translations/frappe-ru.csv /home/$systemUser/$benchFolderName/apps/frappe/frappe/translations/ru.csv
 
 USER root
 WORKDIR /home/$systemUser/$benchFolderName
@@ -62,12 +54,8 @@ RUN echo "-> Install nginx, supervisor, mariadb-client, gettext-base, netcat" \
     && rm -rf /var/lib/apt/lists/* \
     && echo "-> Remove nginx default site" \
     && rm /etc/nginx/sites-enabled/default \
-    && echo "-> Rebuild bench (compile assets, Node 24)" \
-    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 24; nvm alias default 24; npm install -g yarn; node -v; yarn -v; bench build' \
-    && echo "-> APORT CSS tweaks (report row-number column width)" \
-    && for f in /home/$systemUser/$benchFolderName/sites/assets/frappe/dist/css/desk.bundle.*.css; do \
-         echo '/* APORT */ .dt-cell--col-0, .dt-cell--col-0 .dt-cell__content { min-width: 52px; }' >> "$f"; \
-       done \
+    && echo "-> Rebuild bench (compile assets)" \
+    && su $systemUser -c "bench build" \
     && echo "-> Snapshot built sites for first-boot assets/apps links" \
     && su $systemUser -c "cp -r /home/$systemUser/$benchFolderName/sites /home/$systemUser/$benchFolderName/built_sites"
 
