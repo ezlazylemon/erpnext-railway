@@ -36,6 +36,9 @@ ENV systemUser=frappe
 ENV benchFolderName=bench
 
 COPY --from=builder --chown=$systemUser /home/$systemUser/$benchFolderName /home/$systemUser/$benchFolderName
+# venv бенча ссылается на python из pyenv builder-образа; без копии pyenv
+# симлинк env/bin/python бьётся и bench build падает FileNotFoundError
+COPY --from=builder --chown=$systemUser /home/$systemUser/.pyenv /home/$systemUser/.pyenv
 
 COPY temp_nginx.conf /home/$systemUser/temp_nginx.conf
 COPY temp_supervisor.conf /home/$systemUser/temp_supervisor.conf
