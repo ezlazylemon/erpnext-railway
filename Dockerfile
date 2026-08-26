@@ -12,11 +12,11 @@ RUN echo "-> Start builder" \
     # IPv6 hotfix — Railway private networking is IPv6-only
     # https://docs.railway.com/guides/private-networking#caveats
     && sed -i 's/socket\.AF_INET, socket\.SOCK_STREAM/socket.AF_INET6, socket.SOCK_STREAM/g' /home/frappe/bench/apps/frappe/frappe/utils/connections.py \
-    && echo "-> Upgrade Node to 22 (v16 era; CRM/Helpdesk need >=20)" \
+    && echo "-> Upgrade Node to 24 (frappe v16.26 requires >=24)" \
     && export NVM_DIR="${NVM_DIR:-$HOME/.nvm}" \
     && . "$NVM_DIR/nvm.sh" \
-    && nvm install 22 \
-    && nvm alias default 22 \
+    && nvm install 24 \
+    && nvm alias default 24 \
     && npm install -g yarn \
     && node -v && yarn -v \
     && echo "-> Get additional apps (baked into image)" \
@@ -66,8 +66,8 @@ RUN echo "-> Install nginx, supervisor, mariadb-client, gettext-base, netcat" \
     && rm -rf /var/lib/apt/lists/* \
     && echo "-> Remove nginx default site" \
     && rm /etc/nginx/sites-enabled/default \
-    && echo "-> Rebuild bench (compile assets, Node 22)" \
-    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 22; nvm alias default 22; npm install -g yarn; node -v; yarn -v; bench build' \
+    && echo "-> Rebuild bench (compile assets, Node 24)" \
+    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 24; nvm alias default 24; npm install -g yarn; node -v; yarn -v; bench build' \
     && echo "-> Snapshot built sites for first-boot assets/apps links" \
     && su $systemUser -c "cp -r /home/$systemUser/$benchFolderName/sites /home/$systemUser/$benchFolderName/built_sites"
 
