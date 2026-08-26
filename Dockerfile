@@ -19,12 +19,6 @@ RUN echo "-> Start builder" \
     && nvm alias default 24 \
     && npm install -g yarn \
     && node -v && yarn -v \
-    && echo "-> Get additional apps (baked into image)" \
-    # ветки под frappe v15: hrms=version-15, insights=version-3,
-    # crm/helpdesk живут на main (совместимы с v15 на момент фиксации)
-    && bench get-app --branch version-16 --skip-assets hrms https://github.com/frappe/hrms \
-    && bench get-app --branch version-3 --skip-assets insights https://github.com/frappe/insights \
-    && bench get-app --skip-assets crm https://github.com/frappe/crm \
     && echo "-> Builder done"
 
 # ------------------------------------------

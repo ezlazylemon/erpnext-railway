@@ -66,17 +66,6 @@ echo "-> Running bench migrate"
 su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' migrate" \
     || echo "WARN: migrate failed — check logs"
 
-# --- Install additional apps (idempotent) -----------------------------------
-EXTRA_APPS="hrms insights crm"
-INSTALLED=$(su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' list-apps" 2>/dev/null || true)
-for app in $EXTRA_APPS; do
-    if ! echo "$INSTALLED" | grep -qw "$app"; then
-        echo "-> Installing app: $app"
-        su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' install-app $app" \
-            || echo "WARN: install-app $app failed (site keeps running)"
-    fi
-done
-
 # --- Clear cache (best-effort) -----------------------------------------------
 echo "-> Clearing cache"
 su frappe -c "cd /home/frappe/bench && bench execute frappe.cache_manager.clear_global_cache" || true
