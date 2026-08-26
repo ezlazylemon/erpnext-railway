@@ -7,6 +7,19 @@ FROM pipech/erpnext-docker-debian:version-15-latest AS builder
 USER $systemUser
 WORKDIR /home/$systemUser/$benchFolderName
 
+# --- Пин последних патчей v15 (база pipech отстаёт) ---------------------------
+# ВАЖНО: IPv6-хотфикс ниже правит файл frappe — пин должен идти ДО него,
+# иначе checkout -f откатит правку.
+RUN echo "-> Pin frappe v15.119.0 / erpnext v15.120.0" \
+    && git -C apps/frappe fetch --depth 1 origin tag v15.119.0 \
+    && git -C apps/frappe checkout -f v15.119.0 \
+    && git -C apps/erpnext fetch --depth 1 origin tag v15.120.0 \
+    && git -C apps/erpnext checkout -f v15.120.0 \
+    && env/bin/pip install --no-cache-dir -e apps/frappe -e apps/erpnext \
+    && (cd apps/frappe && yarn install) \
+    && (cd apps/erpnext && yarn install || true) \
+    && echo "-> Pin done"
+
 RUN echo "-> Start builder" \
     && rm -rf /home/$systemUser/$benchFolderName/sites/site1.local \
     # IPv6 hotfix — Railway private networking is IPv6-only
