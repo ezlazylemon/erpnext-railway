@@ -70,6 +70,10 @@ su frappe -c "cd /home/frappe/bench && bench --site '${RFP_DOMAIN_NAME}' migrate
 # После смены образа/версии redis может отдавать карту бандлов прошлой
 # сборки (shared-ключ assets_json не чистится clear-cache) — деск виснет
 # на сплэше с 404 по бандлам.
+# ВАЖНО: standalone-запуск frappe падает в логгере без этих каталогов
+# (v15 создаёт логгер database безусловно при connect) — см. notes-findings.
+mkdir -p /home/frappe/logs "/home/frappe/bench/${RFP_DOMAIN_NAME}/logs"
+chown frappe:frappe /home/frappe/logs "/home/frappe/bench/${RFP_DOMAIN_NAME}/logs" || true
 su frappe -c "cd /home/frappe/bench && env/bin/python -c \"
 import os, frappe
 os.chdir('/home/frappe/bench')
