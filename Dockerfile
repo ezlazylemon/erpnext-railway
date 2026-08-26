@@ -12,6 +12,12 @@ RUN echo "-> Start builder" \
     # IPv6 hotfix — Railway private networking is IPv6-only
     # https://docs.railway.com/guides/private-networking#caveats
     && sed -i 's/socket\.AF_INET, socket\.SOCK_STREAM/socket.AF_INET6, socket.SOCK_STREAM/g' /home/frappe/bench/apps/frappe/frappe/utils/connections.py \
+    && echo "-> Upgrade Node to 20 (CRM/Helpdesk frontends require >=20)" \
+    && export NVM_DIR="${NVM_DIR:-$HOME/.nvm}" \
+    && . "$NVM_DIR/nvm.sh" \
+    && nvm install 20 \
+    && nvm alias default 20 \
+    && node -v \
     && echo "-> Get additional apps (baked into image)" \
     # ветки под frappe v15: hrms=version-15, insights=version-3,
     # crm/helpdesk живут на main (совместимы с v15 на момент фиксации)
@@ -59,8 +65,8 @@ RUN echo "-> Install nginx, supervisor, mariadb-client, gettext-base, netcat" \
     && rm -rf /var/lib/apt/lists/* \
     && echo "-> Remove nginx default site" \
     && rm /etc/nginx/sites-enabled/default \
-    && echo "-> Rebuild bench (compile assets)" \
-    && su $systemUser -c "bench build" \
+    && echo "-> Rebuild bench (compile assets, Node 20)" \
+    && su $systemUser -c 'export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"; . "$NVM_DIR/nvm.sh"; nvm install 20; nvm alias default 20; node -v; bench build' \
     && echo "-> Snapshot built sites for first-boot assets/apps links" \
     && su $systemUser -c "cp -r /home/$systemUser/$benchFolderName/sites /home/$systemUser/$benchFolderName/built_sites"
 
