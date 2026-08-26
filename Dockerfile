@@ -12,6 +12,13 @@ RUN echo "-> Start builder" \
     # IPv6 hotfix — Railway private networking is IPv6-only
     # https://docs.railway.com/guides/private-networking#caveats
     && sed -i 's/socket\.AF_INET, socket\.SOCK_STREAM/socket.AF_INET6, socket.SOCK_STREAM/g' /home/frappe/bench/apps/frappe/frappe/utils/connections.py \
+    && echo "-> Get additional apps (baked into image)" \
+    # ветки под frappe v15: hrms=version-15, insights=version-3,
+    # crm/helpdesk живут на main (совместимы с v15 на момент фиксации)
+    && bench get-app --branch version-15 --skip-assets hrms https://github.com/frappe/hrms \
+    && bench get-app --branch version-3 --skip-assets insights https://github.com/frappe/insights \
+    && bench get-app --skip-assets crm https://github.com/frappe/crm \
+    && bench get-app --skip-assets helpdesk https://github.com/frappe/helpdesk \
     && echo "-> Builder done"
 
 # ------------------------------------------
